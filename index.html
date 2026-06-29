@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Phone Receptionist for Home Service Contractors | Ramsey Automation</title>
+    <meta name="description" content="AI Receptionists for HVAC, Plumbing & Electrical. Answer calls 24/7, book appointments, capture leads. Trusted by contractors nationwide.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        header {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #1a1a1a;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #666;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #0066cc;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 6rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 2.5rem;
+            opacity: 0.95;
+        }
+
+        .primary-cta {
+            display: inline-block;
+            background: #ff6b35;
+            color: white;
+            padding: 1.2rem 3rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+        }
+
+        .primary-cta:hover {
+            background: #ff5722;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+        }
+
+        .features {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .feature-text {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 1.1rem;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.12);
+        }
+
+        .card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .card-cta {
+            display: inline-block;
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .card-cta:hover {
+            color: #0052a3;
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .myths { --color: #667eea; }
+        .myths .card-cta { color: #667eea; }
+        .myths .card-cta:hover { color: #5568d3; }
+
+        .demo { --color: #f093fb; }
+        .demo .card-cta { color: #f093fb; }
+        .demo .card-cta:hover { color: #d975dd; }
+
+        .gumroad { --color: #4facfe; }
+        .gumroad .card-cta { color: #4facfe; }
+        .gumroad .card-cta:hover { color: #3a8dd9; }
+
+        .cta-section {
+            background: linear-gradient(135deg, #0066cc 0%, #004399 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+
+        .secondary-cta {
+            display: inline-block;
+            background: white;
+            color: #0066cc;
+            padding: 1rem 2.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .secondary-cta:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: #1a1a1a;
+            color: #999;
+            padding: 2rem;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        .contact-info {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+        }
+
+        .contact-info a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .tagline {
+                font-size: 1.1rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .hero {
+                padding: 4rem 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .primary-cta {
+                padding: 1rem 2rem;
+                font-size: 1rem;
+            }
+
+            .cta-section h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="logo">Ramsey Automation</a>
+            <ul>
+                <li><a href="/demo">Demo</a></li>
+                <li><a href="/myths">Resources</a></li>
+                <li><a href="/gumroad">Templates</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>AI Receptionists for Contractors</h1>
+            <p class="tagline">Answer every call 24/7. Book appointments. Capture leads. Never miss a customer again.</p>
+            <a href="/demo" class="primary-cta">See Demo</a>
+        </div>
+    </section>
+
+    <section class="features">
+        <p class="feature-text">
+            Ramsey Automation provides AI phone receptionists for HVAC, plumbing, and electrical contractors. We handle after-hours calls, take messages, and book appointments directly into your calendar—so you don't lose calls when you're busy on jobs.
+        </p>
+
+        <div class="cards-grid">
+            <div class="card myths">
+                <div class="card-icon">📺</div>
+                <h3>Myths & Facts</h3>
+                <p>Learn how AI receptionists actually work, what they can do, and what to expect. Watch real examples of call handling.</p>
+                <a href="/myths" class="card-cta">Watch Videos →</a>
+            </div>
+
+            <div class="card demo">
+                <div class="card-icon">🎯</div>
+                <h3>See It In Action</h3>
+                <p>Hear how the AI answers calls, handles common questions, books appointments, and escalates urgent calls to you.</p>
+                <a href="/demo" class="card-cta">View Demo →</a>
+            </div>
+
+            <div class="card gumroad">
+                <div class="card-icon">📦</div>
+                <h3>Get Templates</h3>
+                <p>Purchase the 5 templates we use to set up, test, and deploy AI receptionists for contractors. All the documents you need.</p>
+                <a href="/gumroad" class="card-cta">Buy Templates →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <h2>Ready to Stop Losing Calls?</h2>
+        <p>Get a custom demo personalized to your business. See how the AI handles your type of calls.</p>
+        <a href="/demo" class="secondary-cta">Schedule Demo</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Ramsey Automation. All rights reserved.</p>
+        <p>AI phone receptionists for home service contractors in the Fargo, ND area and beyond.</p>
+        <div class="contact-info">
+            <p>Questions? <a href="tel:+19403291764">Call (940) 329-1764</a> or <a href="mailto:automation.ramsey@gmail.com">email us</a></p>
+        </div>
+    </footer>
+</body>
+</html>
